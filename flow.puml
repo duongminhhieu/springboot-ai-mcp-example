@@ -1,0 +1,89 @@
+@startuml
+skinparam sequenceArrowThickness 2
+skinparam roundcorner 10
+skinparam sequenceParticipant {
+  BackgroundColor #222222
+  BorderColor #222222
+  FontColor white
+  FontSize 14
+}
+skinparam sequenceLifeLineBorderColor #AAAAAA
+skinparam sequenceGroupFontColor white
+
+participant "User" as User
+participant "Chat Client" as Chat
+participant "LLM\n(gpt-4o-mini)" as LLM
+participant "MCP Client" as Client
+participant "MCP Server" as Server
+participant "Tool" as Tool
+participant "Data Source\n(MongoDB, PostgreSQL)" as DB
+
+
+
+group Initialization and Discovery
+ 
+
+    Chat -> Client: Initialization Request
+    activate Chat
+    activate Client
+    activate Server
+
+    Client -> Server: Connect
+    
+
+    Server --> Client: Connection established
+    
+
+    Client -> Server: Request Capabilities
+
+        
+    Server --> Client: Return available tools
+
+    Client -> Chat: Register available tools
+    activate LLM
+    Chat -> LLM: Make tools available to AI model
+    LLM --> Chat: Tools made available successfully
+
+    deactivate Chat
+    deactivate Client
+    deactivate Server
+    deactivate LLM
+
+end 
+
+group Processing a User request
+
+
+    User -> Chat: <i>"get alls products"</i>
+    activate User
+    activate Chat
+    activate Client
+    activate Server
+    activate LLM
+    activate Tool
+    activate DB
+    Chat -> LLM: <i>"get alls products"</i>
+    LLM -> LLM: AI model recognizes\nthe need for external data
+    LLM -> Chat: AI model identifies\navailable tools
+    Chat -> Client: Request tool execution
+    Client -> Server: Send sandardized request
+    Server -> Tool: Execute tool request
+    Tool -> DB: Query data source
+    DB --> Tool: Return data
+    Tool --> Server: Return results
+    Server --> Client: Return formated results
+    Client --> LLM: Deliver external \ndata to AI model
+    LLM -> LLM: AI model generates response \nwith product data
+    LLM -> Chat: Return response
+    Chat -> User: Display response
+
+
+    deactivate User
+    deactivate Chat
+    deactivate Client
+    deactivate Server
+    deactivate LLM
+    deactivate Tool
+    deactivate DB
+end
+@enduml
