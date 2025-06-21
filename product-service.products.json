@@ -1,0 +1,71 @@
+[{
+  "_id": {
+    "$oid": "6741fb87d4c910106fb2b968"
+  },
+  "name": "Iphone 1",
+  "description": "ss",
+  "price": 1000,
+  "_class": "microservice.shop.productservice.models.Product"
+},
+{
+  "_id": {
+    "$oid": "6741fb96d4c910106fb2b969"
+  },
+  "name": "Iphone 1",
+  "description": "ss",
+  "price": {
+    "$numberLong": "1000"
+  },
+  "_class": "microservice.shop.productservice.models.Product"
+},
+{
+  "_id": {
+    "$oid": "6741fbaed4c910106fb2b96a"
+  },
+  "name": "Iphone 0",
+  "description": "1010",
+  "price": 100,
+  "_class": "microservice.shop.productservice.models.Product"
+},
+{
+  "_id": {
+    "$oid": "6741fc53d4c910106fb2b96b"
+  },
+  "name": "Iphone 10",
+  "description": "Dep ",
+  "price": 100,
+  "_class": "microservice.shop.productservice.models.Product"
+},
+{
+  "_id": {
+    "$oid": "6742e6ead975ae4ea804f5be"
+  },
+  "name": "Iphone 11",
+  "description": "San dep",
+  "price": 100,
+  "_class": "microservice.shop.productservice.models.Product"
+},
+{
+  "_id": {
+    "timestamp": 1732377479,
+    "date": {
+      "$numberLong": "1732377479000"
+    }
+  },
+  "name": "Iphone 1",
+  "description": "ss",
+  "price": 1000,
+  "_class": "microservice.shop.productservice.models.Product"
+},
+{
+  "_id": {
+    "timestamp": 1732377494,
+    "date": {
+      "$numberLong": "1732377494000"
+    }
+  },
+  "name": "Iphone 1",
+  "description": "ss",
+  "price": 1000,
+  "_class": "microservice.shop.productservice.models.Product"
+}]
