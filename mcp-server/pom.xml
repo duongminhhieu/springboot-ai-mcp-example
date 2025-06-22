@@ -31,11 +31,6 @@
 		<spring-ai.version>1.0.0</spring-ai.version>
 	</properties>
 	<dependencies>
-		<dependency>
-			<groupId>org.springframework.ai</groupId>
-			<artifactId>spring-ai-starter-mcp-server</artifactId>
-		</dependency>
-
 <!--		Full MCP Server features support with STDIO server transport. -->
 <!--		<dependency>-->
 <!--			<groupId>org.springframework.ai</groupId>-->
