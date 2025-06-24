@@ -1,5 +1,6 @@
 # Spring AI MCP Examples
 This project demonstrates how to build and integrate a **Model-Controller-Prompt (MCP)** architecture using **Spring Boot** and **Spring AI**. It includes both an **MCP Client** and an **MCP Server**, showcasing how AI models can dynamically interact with external tools and data sources (**MongoDB**, **PostgreSQL**) to fulfill user requests in real time.
+* **Full blog:** https://blog.nashtechglobal.com/building-an-mcp-server-and-client-using-java-spring-boot-ai/
 
 ## Features
 * **Data Source Integration**: Connects to a local MongoDB, PostgreSQL to perform various operations.
@@ -7,6 +8,9 @@ This project demonstrates how to build and integrate a **Model-Controller-Prompt
 Tool methods are declared using the ```@Tool``` annotation, making them discoverable and callable by the AI model at runtime.
 
 * **Tool Registration with** ```ToolCallbackProvider```: Used to expose and register tools dynamically during initialization, enabling seamless integration with Spring AI.
+
+![image](https://github.com/user-attachments/assets/17e00ada-3ad5-442e-aadf-083c4497e359)
+
 
 ## How It Works 
 The MCP workflow in these examples follows these steps:
